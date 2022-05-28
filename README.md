@@ -107,3 +107,42 @@ test('方法2-fetchData2 返回结果为 404', async () => {
 })
 ```
 
+## Jest 核心的几个钩子
+
+- beforeAll
+- afterAll
+- beforeEach
+- afterEach
+
+
+它们的执行顺序：
+
+```js
+
+beforeAll
+
+// 每一个 test 用例前都会执行一遍
+beforeEach
+
+// 每一个 test 用例后都会执行一遍
+afterEach
+
+afterAll
+```
+
+其中，每一个 `describe` 里面都有自己的独立作用域，先执行外部，再执行内部的
+
+
+使用 `test.only` 可以跳过其他的用例
+
+```js
+ describe('test-only', () => {
+   beforeEach(() => {
+     counter = new Counter();
+   })
+   test.only('test.only 测试', () => {
+     counter.minusTwo()
+     expect(counter.value).toBe(-2)
+   })
+ })
+ ```
