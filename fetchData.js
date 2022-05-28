@@ -10,3 +10,6 @@ export const fetchData = (fn) => {
 export const fetchData2 = () => {
   return axios.get('http://localhost:8000/api/get-data11');
 }
+export const fetchData3 = () => {
+  return axios.get('http://localhost:8000/api/get-data');
+}

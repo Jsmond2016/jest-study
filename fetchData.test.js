@@ -1,4 +1,4 @@
-import { fetchData, fetchData2 } from './fetchData'
+import { fetchData, fetchData2, fetchData3 } from './fetchData'
 
 test('fetchData 返回结果为 { success: true }', (done) => {
   fetchData((data) => {
@@ -17,4 +17,57 @@ test('fetchData2 返回结果为 404', () => {
   return fetchData2().catch((e) => {
     expect(e.toString().indexOf('404') > -1).toBe(true)
   })
+})
+
+test('方法2-fetchData 返回结果为 { success: true }', () => {
+  // 使用 resolves 处理 promise https://jestjs.io/docs/expect#resolves
+  // 使用 toMatchObject 测试子集 https://jestjs.io/docs/expect#tomatchobjectobject
+  return expect(fetchData3()).resolves.toMatchObject({
+    data: {
+      success: true
+    }
+  })
+})
+
+
+
+test('方法2-fetchData2 返回结果为 404', () => {
+  return expect(fetchData2()).rejects.toThrow();
+})
+
+// 使用 await 方法 
+test('方法2-fetchData 返回结果为 { success: true }', async () => {
+  // 使用 resolves 处理 promise https://jestjs.io/docs/expect#resolves
+  // 使用 toMatchObject 测试子集 https://jestjs.io/docs/expect#tomatchobjectobject
+  await expect(fetchData3()).resolves.toMatchObject({
+    data: {
+      success: true
+    }
+  })
+})
+
+// 使用 await 方法
+test('方法2-fetchData2 返回结果为 404', async () => {
+  await expect(fetchData2()).rejects.toThrow();
+})
+
+// 使用 await 方法 
+test('方法2-fetchData 返回结果为 { success: true }', async () => {
+  // 使用 resolves 处理 promise https://jestjs.io/docs/expect#resolves
+  // 使用 toMatchObject 测试子集 https://jestjs.io/docs/expect#tomatchobjectobject
+  const { data } = await fetchData3()
+  expect(data).toEqual({
+    success: true
+  })
+})
+
+// 使用 await 方法
+test('方法2-fetchData2 返回结果为 404', async () => {
+  expect.assertions(1)
+  try {
+    await fetchData2();
+  } catch (error) {
+    expect(error.toString().indexOf('404') > -1).toBe(true);
+  }
+
 })
