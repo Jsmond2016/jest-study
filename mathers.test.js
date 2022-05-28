@@ -89,4 +89,5 @@ const throwNewErrorFn = () => {
 
 test('toThrow 匹配器测试异常', () => {
   expect(throwNewErrorFn).toThrow('this is a new error')
+  // expect(throwNewErrorFn).toThrow('this is assss new error')
 })
