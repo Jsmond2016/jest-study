@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1653701091866" clover="3.2.0">
-  <project timestamp="1653701091866" name="All files">
-    <metrics statements="4" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0" elements="7" coveredelements="1" complexity="0" loc="4" ncloc="4" packages="1" files="1" classes="1"/>
-    <file name="math.js" path="D:\Desktop\jest-test\math.js">
-      <metrics statements="4" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
-      <line num="2" count="0" type="stmt"/>
-      <line num="6" count="0" type="stmt"/>
-      <line num="10" count="0" type="stmt"/>
-      <line num="13" count="1" type="stmt"/>
+<coverage generated="1653704781142" clover="3.2.0">
+  <project timestamp="1653704781142" name="All files">
+    <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2" elements="5" coveredelements="5" complexity="0" loc="3" ncloc="3" packages="1" files="1" classes="1"/>
+    <file name="fetchData.js" path="D:\Desktop\jest-test\fetchData.js">
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <line num="3" count="1" type="stmt"/>
+      <line num="4" count="1" type="stmt"/>
+      <line num="6" count="1" type="stmt"/>
     </file>
   </project>
 </coverage>
