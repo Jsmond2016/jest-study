@@ -1,5 +1,16 @@
+const axios = require('axios')
+
 const runCallback = (fn) => {
   fn();
 }
 
-module.exports = runCallback
+const getData = () => {
+  return axios.get('http://localhost:8000/api/mock-data')
+}
+
+
+
+module.exports = {
+  getData,
+  runCallback
+}

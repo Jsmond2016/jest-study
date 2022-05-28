@@ -1,4 +1,5 @@
-const runCallback = require('./runCallback')
+const { runCallback, getData } = require('./runCallback')
+const axios = require('axios');
 
 // 验证传入函数是否被调用
 
@@ -10,6 +11,13 @@ const runCallback = require('./runCallback')
 
 //   以及我们无法保证 runCallback 一定有返回值，为了测试去修改原函数返回？不应该这么做
 // })
+
+jest.mock('axios')
+
+// 拓展: mockImplementation 作用和 jest.fn(() => {}) 功能相似
+//     const fn = jest.fn()
+//     fn.mockImplementation(() => {})
+
 
 
 test('测试 runCallback -- 验证传入函数是否被调用', () => {
@@ -32,4 +40,26 @@ test('测试 runCallback -- 验证传入函数的返回结果', () => {
   fn.mockReturnValue('mock value')
   runCallback(fn)
   expect(fn.mock.results[0].value).toBe('mock value');
+})
+
+
+
+test('测试 axios mock', async () => {
+  // 模拟接口返回，后端应该保证数据返回，前端仅 mock 即可
+  const resp = { data: 'hello' }
+  axios.get.mockResolvedValue(resp);
+  const { data } = await getData();
+  expect(data).toBe('hello')
+})
+
+test('测试 axios mock 多次返回结果', async () => {
+  // 模拟接口返回，后端应该保证数据返回，前端仅 mock 即可
+  const res1 = { data: 'hello' }
+  const res2 = { data: 'world' }
+  axios.get.mockResolvedValueOnce(res1);
+  axios.get.mockResolvedValueOnce(res2);
+  const { data } = await getData();
+  expect(data).toBe('hello')
+  const { data: data2 } = await getData();
+  expect(data2).toBe('world')
 })
