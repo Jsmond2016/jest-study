@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1653700768662" clover="3.2.0">
-  <project timestamp="1653700768662" name="All files">
-    <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0" elements="0" coveredelements="0" complexity="0" loc="0" ncloc="0" packages="0" files="0" classes="0"/>
+<coverage generated="1653701091866" clover="3.2.0">
+  <project timestamp="1653701091866" name="All files">
+    <metrics statements="4" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0" elements="7" coveredelements="1" complexity="0" loc="4" ncloc="4" packages="1" files="1" classes="1"/>
+    <file name="math.js" path="D:\Desktop\jest-test\math.js">
+      <metrics statements="4" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
+      <line num="2" count="0" type="stmt"/>
+      <line num="6" count="0" type="stmt"/>
+      <line num="10" count="0" type="stmt"/>
+      <line num="13" count="1" type="stmt"/>
+    </file>
   </project>
 </coverage>
