@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`测试配置文件的快照-generateConfig 1`] = `
+Object {
+  "domain": "localhost",
+  "port": 8080,
+  "server": "http://localhost",
+  "time": "2022",
+}
+`;
+
+exports[`测试配置文件的快照-generateConfig 2`] = `
+Object {
+  "domain": "localhost",
+  "dynamicTime": Any<Date>,
+  "port": 8080,
+  "server": "http://localhost",
+  "time": "2022",
+}
+`;
